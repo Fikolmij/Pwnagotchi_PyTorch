@@ -90,7 +90,7 @@ main.plugins.ups_lite.shutdown = 2
 
 main.plugins.gpio_buttons.enabled = false
 
-main.plugins.led.enabled = true
+main.plugins.led.enabled = false
 main.plugins.led.led = 0
 main.plugins.led.delay = 200
 main.plugins.led.patterns.loaded = "oo  oo  oo oo  oo  oo  oo"
@@ -137,10 +137,7 @@ ai.params.vf_coef = 0.25
 ai.params.ent_coef = 0.01
 ai.params.max_grad_norm = 0.5
 ai.params.learning_rate = 0.001
-ai.params.alpha = 0.99
-ai.params.epsilon = 0.00001
 ai.params.verbose = 1
-ai.params.lr_schedule = "constant"
 
 personality.advertise = true
 personality.deauth = true
