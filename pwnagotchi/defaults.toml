@@ -196,9 +196,9 @@ ui.web.origin = ""
 ui.web.port = 8080
 ui.web.on_frame = ""
 
-ui.display.enabled = true
+ui.display.enabled = false
 ui.display.rotation = 180
-ui.display.type = "waveshare_2"
+ui.display.type = "waveshare_3"
 ui.display.color = "black"
 
 bettercap.scheme = "http"
