@@ -18,15 +18,17 @@ def load(config, agent, epoch, from_disk=True):
         logging.info("[ai] bootstrapping dependencies ...")
 
         start = time.time()
-        from stable_baselines import A2C
+        from stable_baselines3 import A2C
         logging.debug("[ai] A2C imported in %.2fs" % (time.time() - start))
+        
+        start = time.time()
+        from stable_baselines3.a2c import MlpPolicy
++       logging.debug("[ai] MlpPolicy imported in %.2fs" % (time.time() - start))
+        
+
 
         start = time.time()
-        from stable_baselines.common.policies import MlpLstmPolicy
-        logging.debug("[ai] MlpLstmPolicy imported in %.2fs" % (time.time() - start))
-
-        start = time.time()
-        from stable_baselines.common.vec_env import DummyVecEnv
+        from stable_baselines3.common.vec_env import DummyVecEnv
         logging.debug("[ai] DummyVecEnv imported in %.2fs" % (time.time() - start))
 
         start = time.time()
@@ -39,7 +41,7 @@ def load(config, agent, epoch, from_disk=True):
         logging.info("[ai] creating model ...")
 
         start = time.time()
-        a2c = A2C(MlpLstmPolicy, env, **config['params'])
+        a2c = A2C(MlpPolicy, env, **config['params'])
         logging.debug("[ai] A2C created in %.2fs" % (time.time() - start))
 
         if from_disk and os.path.exists(config['path']):
