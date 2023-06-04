@@ -23,7 +23,7 @@ def load(config, agent, epoch, from_disk=True):
         
         start = time.time()
         from stable_baselines3.a2c import MlpPolicy
-+       logging.debug("[ai] MlpPolicy imported in %.2fs" % (time.time() - start))
+        logging.debug("[ai] MlpPolicy imported in %.2fs" % (time.time() - start))
         
 
 
